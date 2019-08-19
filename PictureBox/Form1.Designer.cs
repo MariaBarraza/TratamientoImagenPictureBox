@@ -31,7 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.btnCargarImagen = new System.Windows.Forms.Button();
             this.imageBox1 = new Emgu.CV.UI.ImageBox();
+            this.btnConvertirGris = new System.Windows.Forms.Button();
+            this.imageBox2 = new Emgu.CV.UI.ImageBox();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCargarImagen
@@ -48,20 +51,41 @@
             // 
             this.imageBox1.Location = new System.Drawing.Point(12, 66);
             this.imageBox1.Name = "imageBox1";
-            this.imageBox1.Size = new System.Drawing.Size(405, 372);
+            this.imageBox1.Size = new System.Drawing.Size(377, 372);
             this.imageBox1.TabIndex = 2;
             this.imageBox1.TabStop = false;
+            // 
+            // btnConvertirGris
+            // 
+            this.btnConvertirGris.Location = new System.Drawing.Point(210, 13);
+            this.btnConvertirGris.Name = "btnConvertirGris";
+            this.btnConvertirGris.Size = new System.Drawing.Size(128, 47);
+            this.btnConvertirGris.TabIndex = 3;
+            this.btnConvertirGris.Text = "Convertir a gris";
+            this.btnConvertirGris.UseVisualStyleBackColor = true;
+            this.btnConvertirGris.Click += new System.EventHandler(this.BtnConvertirGris_Click);
+            // 
+            // imageBox2
+            // 
+            this.imageBox2.Location = new System.Drawing.Point(423, 66);
+            this.imageBox2.Name = "imageBox2";
+            this.imageBox2.Size = new System.Drawing.Size(365, 372);
+            this.imageBox2.TabIndex = 4;
+            this.imageBox2.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.imageBox2);
+            this.Controls.Add(this.btnConvertirGris);
             this.Controls.Add(this.imageBox1);
             this.Controls.Add(this.btnCargarImagen);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -70,6 +94,8 @@
 
         private System.Windows.Forms.Button btnCargarImagen;
         private Emgu.CV.UI.ImageBox imageBox1;
+        private System.Windows.Forms.Button btnConvertirGris;
+        private Emgu.CV.UI.ImageBox imageBox2;
     }
 }
 

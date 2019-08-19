@@ -18,6 +18,7 @@ namespace PictureBox
     public partial class Form1 : Form
     {
         Image<Bgr, byte> _InputColor;
+        Image<Gray, byte> _InputGray;
 
         public Form1()
         {
@@ -26,16 +27,24 @@ namespace PictureBox
 
         private void BtnCargarImagen_Click(object sender, EventArgs e)
         {
-            string rutaImagen = "C:\\Users\\alumno\\source\\repos\\PictureBox\\PictureBox\\imagen\\sora.jpg";
-            _InputColor = new Image<Bgr, byte>(rutaImagen);
+            string rutaImagen = "C:\\Users\\alumno\\source\\repos\\TratamientoImagenPictureBox\\PictureBox\\imagen\\sora.jpg";
+          
+                _InputColor = new Image<Bgr, byte>(rutaImagen);
 
             if(_InputColor == null)
             {
                 MessageBox.Show("No se cargo la imagen");
                 return;
             }
+                imageBox1.Image = _InputColor;
+            //desactivar las opciones del menu
+            imageBox1.FunctionalMode = Emgu.CV.UI.ImageBox.FunctionalModeOption.Minimum;
+        }
 
-            imageBox1.Image = _InputColor;
+        private void BtnConvertirGris_Click(object sender, EventArgs e)
+        {
+            _InputGray = _InputColor.Convert<Gray,byte>();
+            imageBox2.Image = _InputGray;
         }
     }
 }
